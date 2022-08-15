@@ -2,6 +2,7 @@ from flask import Flask
 from views import views
 
 app = Flask(__name__)
+app.secret_key = "salihan123"
 
 # @app.route("/")
 # def home():

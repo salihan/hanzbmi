@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+<div>
+
+</div>
+
+{% block content %}
+<div id="feedback-form">
+  <h2 class="header">BMI Today</h2>
+  <div>
+    <form action="bmiresult" method="post">
+      <input type="text" name="in_weight" placeholder="Weight in kg"></input>
+      <input type="text" name="in_height" placeholder="Height in metre"></input>
+      <label for="feedback-notify">Remind me about this event via SMS</label>
+      <input type="checkbox" id="feedback-notify" name="notify">
+      <input type="text" id="feedback-phone" name="phone" placeholder="Phone number"></input>
+      <button type="submit">Check BMI</button>
+    </form>
+  </div>
+</div>
+
+<div id="feedback-form">
+  {% for message in get_flashed_messages() %}
+  <h3>{{ message }}</h3>
+  {% endfor %}
+</div>
+
+{% endblock %}
